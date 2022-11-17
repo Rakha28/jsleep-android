@@ -3,16 +3,12 @@ package com.RakhaArgyaZahranJSleepDN.jsleep_android;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.RakhaArgyaZahranJSleepDN.jsleep_android.model.Room;
 import com.google.gson.Gson;
@@ -41,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         String myList = null;
 
 
-        try {
+        try
+        {
             InputStream is = getAssets().open("randomRoomList.json");
             int size = is.available();
             byte[] buffer = new byte[size];
@@ -49,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
             is.close();
             myList = new String(buffer, "UTF-8");
 
-        } catch (IOException e) {
+        }
+
+        catch (IOException e)
+
+        {
             e.printStackTrace();
         }
 
@@ -61,7 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Room> rooms = new Gson().fromJson(myList, listType);
 
-        for (Room room : rooms) {
+        for (Room room : rooms)
+        {
             list.add(room.name);
         }
 
