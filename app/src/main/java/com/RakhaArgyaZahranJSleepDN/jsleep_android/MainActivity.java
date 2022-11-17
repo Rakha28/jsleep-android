@@ -32,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
+
         setContentView(R.layout.activity_main);
+
 
         ArrayList<String> list = new ArrayList<>();
 
@@ -51,7 +53,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
+
         Type listType = new TypeToken<ArrayList<Room>>(){}.getType();
+
+
 
         ArrayList<Room> rooms = new Gson().fromJson(myList, listType);
 
@@ -62,9 +68,15 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listView);
 
+
+
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
 
+
         listView.setAdapter(adapter);
+
+
 
 
 
@@ -72,7 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
+
         getMenuInflater().inflate(R.menu.top_menu, menu);
+
         return (super.onCreateOptionsMenu(menu));
     }
 
