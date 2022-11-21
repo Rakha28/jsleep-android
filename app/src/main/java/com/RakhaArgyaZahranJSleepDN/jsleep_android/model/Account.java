@@ -6,5 +6,18 @@ public class Account extends Serializable{
     public String name;
     public String renter;
     public double balance;
+
+    @Override
+    public String toString(){
+        return "Account{" +
+                "password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", renter='" + renter + '\'' +
+                ", balance=" + balance +
+                '}';
+    }
+
+
 }
 

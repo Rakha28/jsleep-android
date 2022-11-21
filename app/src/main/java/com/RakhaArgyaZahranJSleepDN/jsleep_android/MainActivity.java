@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<Room> rooms = new Gson().fromJson(myList, listType);
 
-        for (Room room : rooms)
+        for (Room room :    rooms)
         {
             list.add(room.name);
         }
