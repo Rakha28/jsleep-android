@@ -40,40 +40,43 @@ public class LoginActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         password = findViewById(R.id.Password);
 
+
         Button login = findViewById(R.id.buttonLogin);
         TextView register = findViewById(R.id.registerNow);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Account account = requestAccount();
-                Intent move = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(move);
+                Account account = requestLogin();
             }
         });
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent move = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(move);
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }
 
-    protected Account requestAccount() {
-        mApiService.getAccount(0).enqueue(new Callback<Account>() {
+    protected Account requestLogin(){
+        mApiService.login(username.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
                 if (response.isSuccessful()) {
                     Account account;
                     account = response.body();
                     System.out.println(account.toString());
+                    Toast.makeText(mContext, "Login Success", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
             }
+
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
-                Toast.makeText(mContext, "no Account id=0", Toast.LENGTH_LONG).show();
+                Toast.makeText(mContext, "username atau password salah", Toast.LENGTH_SHORT).show();
             }
         });
         return null;

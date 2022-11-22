@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.RakhaArgyaZahranJSleepDN.jsleep_android.model.Account;
 import com.RakhaArgyaZahranJSleepDN.jsleep_android.model.Room;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
+    public static Account accountObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

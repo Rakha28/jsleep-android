@@ -52,4 +52,5 @@ public interface BaseApiService {
                            @Query("city") City city,
                            @Query("address") String address);
 
+
 }
