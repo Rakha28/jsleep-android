@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Account account;
                     account = response.body();
-                    System.out.println(account.toString());
+                    MainActivity.accountObject = account;
                     Toast.makeText(mContext, "Login Success", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
