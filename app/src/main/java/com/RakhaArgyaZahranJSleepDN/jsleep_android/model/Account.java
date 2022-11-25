@@ -4,7 +4,7 @@ public class Account extends Serializable{
     public String password;
     public String email;
     public String name;
-    public String renter;
+    public Renter renter;
     public double balance;
 
     @Override

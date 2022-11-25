@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.RakhaArgyaZahranJSleepDN.jsleep_android.model.Account;
+import com.RakhaArgyaZahranJSleepDN.jsleep_android.model.Renter;
 import com.RakhaArgyaZahranJSleepDN.jsleep_android.model.Room;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -90,8 +91,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-
         getMenuInflater().inflate(R.menu.top_menu, menu);
+        if(accountObject.renter== null){
+            menu.findItem(R.id.add_button).setVisible(false);
+        }
 
         return (super.onCreateOptionsMenu(menu));
     }
@@ -99,6 +102,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.add_button:
+                Intent intent = new Intent(this, CreateRoomActivity.class);
+                startActivity(intent);
+                return true;
             case R.id.person_button:
 
 

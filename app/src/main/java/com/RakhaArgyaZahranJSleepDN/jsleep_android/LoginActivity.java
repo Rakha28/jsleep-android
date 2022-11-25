@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
         mApiService.login(username.getText().toString(), password.getText().toString()).enqueue(new Callback<Account>() {
             @Override
             public void onResponse(Call<Account> call, Response<Account> response) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful()||response.code()==200) {
                     Account account;
                     account = response.body();
                     MainActivity.accountObject = account;
@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Account> call, Throwable t) {
                 Toast.makeText(mContext, "username atau password salah", Toast.LENGTH_SHORT).show();
+                System.out.println(t);
             }
         });
         return null;
