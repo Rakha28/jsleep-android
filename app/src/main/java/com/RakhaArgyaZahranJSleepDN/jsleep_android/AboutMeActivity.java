@@ -154,7 +154,7 @@ public class AboutMeActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
 
 
-                    
+
                     Renter renter = response.body();
                     accountObject.renter = renter;
                     Toast.makeText(mContext, "Register Renter Success", Toast.LENGTH_SHORT).show();
