@@ -142,20 +142,36 @@ public class AboutMeActivity extends AppCompatActivity {
     }
 
     protected Renter requestRegisterRenter(){
+
+
         mApiService.registerRenter(accountObject.id, namaRenter.getText().toString(), alamatRenter.getText().toString(), NomorRenter.getText().toString()).enqueue(new Callback<Renter>() {
+
+
+
             @Override
+
             public void onResponse(@NonNull Call<Renter> call, @NonNull Response<Renter> response) {
                 if (response.isSuccessful()) {
+
+
+                    
                     Renter renter = response.body();
                     accountObject.renter = renter;
                     Toast.makeText(mContext, "Register Renter Success", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(AboutMeActivity.this, MainActivity.class);
                     startActivity(intent);
 
+
                 } else {
+
+
+
                     Toast.makeText(mContext, "Register Renter Failed", Toast.LENGTH_SHORT).show();
                 }
             }
+
+
+
 
             @Override
             public void onFailure(@NonNull Call<Renter> call, @NonNull Throwable t) {
