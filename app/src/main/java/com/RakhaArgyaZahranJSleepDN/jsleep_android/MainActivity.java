@@ -93,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.top_menu, menu);
         if(accountObject.renter== null){
+
+
+
             menu.findItem(R.id.add_button).setVisible(false);
         }
 
@@ -103,7 +106,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_button:
+
+
+
                 Intent intent = new Intent(this, CreateRoomActivity.class);
+
+
+
+
+
                 startActivity(intent);
                 return true;
             case R.id.person_button:

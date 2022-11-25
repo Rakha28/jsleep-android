@@ -24,11 +24,22 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints">
 
+
+
+
+
+
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="550dp"
             app:layout_constraintEnd_toEndOf="@+id/createProduct"
             app:layout_constraintStart_toEndOf="@+id/createProduct">
+
+
+
+
+
 
             <TextView
                 android:id="@+id/CreateRoom"
@@ -40,6 +51,13 @@
                 android:textSize="24sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+
+
 
             <EditText
                 android:id="@+id/NameRoom"
@@ -56,6 +74,11 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:visibility="visible" />
 
+
+
+
+
+
             <EditText
                 android:id="@+id/PriceRoom"
                 android:layout_width="300dp"
@@ -71,6 +94,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/NameRoom"
                 tools:visibility="visible" />
 
+
+
+
+
+
+
             <EditText
                 android:id="@+id/AddressRoom"
                 android:layout_width="300dp"
@@ -83,6 +112,10 @@
                 android:minHeight="48dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/PriceRoom" />
+
+
+
+
 
             <EditText
                 android:id="@+id/SizeRoom"
@@ -98,6 +131,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/AddressRoom" />
 
             <TextView
+
+
                 android:id="@+id/FacilityText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,6 +142,13 @@
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/SizeRoom" />
+
+
+
+
+
+
+
 
             <TextView
                 android:id="@+id/CityText"
@@ -120,12 +162,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/FacilityText" />
 
             <TextView
+
+
+
                 android:id="@+id/BedTypeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
                 android:text="Bed Type"
+
+
+
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CityText" />
@@ -139,8 +187,19 @@
                 android:layout_marginEnd="41dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
+
+
+
                 app:layout_constraintStart_toEndOf="@+id/FacilityText"
                 app:layout_constraintTop_toBottomOf="@+id/SizeRoom" />
+
+
+
+
+
+
+
+
 
             <Spinner
                 android:id="@+id/spinnerCategory"
