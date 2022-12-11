@@ -62,9 +62,11 @@ public class BookActivity extends AppCompatActivity {
         mApiService = UtilsApi.getApiService();
         mContext = this;
 
+
         if(paymentList == null){
             paymentList = new ArrayList<>();
         }
+
 
 
         dateButtonFrom = findViewById(R.id.fromPicker);
@@ -76,16 +78,19 @@ public class BookActivity extends AppCompatActivity {
         dateButtonTo.setText(to);
 
 
+
         dateButtonFrom.setOnClickListener(view -> {
             index = 1;
             datePickerDialog.show();
         });
 
 
+
         dateButtonTo.setOnClickListener(view -> {
             index = 2;
             datePickerDialog.show();
         });
+
 
 
         Button saveButton = findViewById(R.id.saveButton_date);
@@ -99,10 +104,14 @@ public class BookActivity extends AppCompatActivity {
         });
 
 
+
+
         updatePrice();
         TextView balanceText = findViewById(R.id.tvBalance);
         String balanceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(accountBalance);
         balanceText.setText(balanceCurrency);
+
+
     }
 
 
@@ -145,6 +154,7 @@ public class BookActivity extends AppCompatActivity {
                 }
             }
         };
+
 
 
         Calendar cal = Calendar.getInstance();
@@ -237,12 +247,16 @@ public class BookActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("MMM dd yyyy");
         Date dateBefore = null;
         Date dateAfter = null;
+
+
         try {
             dateBefore = sdf.parse(before);
             dateAfter = sdf.parse(after);
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+
         long timeDiff = Math.abs(dateAfter.getTime() - dateBefore.getTime());
         long daysDiff = TimeUnit.DAYS.convert(timeDiff, TimeUnit.MILLISECONDS);
         return daysDiff;
@@ -253,9 +267,11 @@ public class BookActivity extends AppCompatActivity {
      * method untuk mengupdate harga
      */
     public void updatePrice(){
+
         TextView priceText = findViewById(R.id.tvPrice);
         String priceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(roomPrice * calcDays(from, to));
         priceText.setText(priceCurrency);
+        
     }
 
 

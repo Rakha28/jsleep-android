@@ -138,7 +138,7 @@ public class DetailRoomActivity extends AppCompatActivity {
     /**
      * method sebagai algoritm calculate booking
      */
-    protected void mainLogic(){
+    protected void Logic(){
         startLayout = findViewById(R.id.linearStart_detail);
         payLayout = findViewById(R.id.linearPayment_detail);
         buttonLayout = findViewById(R.id.linearButton_detail);
@@ -305,7 +305,7 @@ public class DetailRoomActivity extends AppCompatActivity {
             public void onResponse(Call<Payment> call, Response<Payment> response) {
                 if(response.isSuccessful()){
                     currentPayment = response.body();
-                    mainLogic();
+                    Logic();
                 }
             }
 
@@ -315,7 +315,7 @@ public class DetailRoomActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Payment> call, Throwable t) {
                 System.out.println(t);
-                mainLogic();
+                Logic();
             }
         });
         return null;
