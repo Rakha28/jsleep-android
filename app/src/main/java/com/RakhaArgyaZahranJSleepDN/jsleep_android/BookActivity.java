@@ -271,7 +271,7 @@ public class BookActivity extends AppCompatActivity {
         TextView priceText = findViewById(R.id.tvPrice);
         String priceCurrency = NumberFormat.getCurrencyInstance(new Locale("in", "ID")).format(roomPrice * calcDays(from, to));
         priceText.setText(priceCurrency);
-        
+
     }
 
 
