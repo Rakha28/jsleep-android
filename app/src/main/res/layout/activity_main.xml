@@ -31,7 +31,6 @@
         android:layout_height="54dp"
         android:ems="10"
         android:inputType="number"
-        android:text="1"
         android:textAlignment="center"
         app:layout_constraintEnd_toStartOf="@+id/Go_Button"
         app:layout_constraintStart_toEndOf="@+id/next_button"

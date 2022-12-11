@@ -17,4 +17,10 @@
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Person Button"
         app:showAsAction="collapseActionView|always" />
+
+    <item android:id="@+id/logout_button"
+        android:title="Logout"
+        app:showAsAction="collapseActionView|always" />
+
+
 </menu>
